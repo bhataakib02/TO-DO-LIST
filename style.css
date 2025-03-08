@@ -1,0 +1,127 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    transition: background 0.5s;
+}
+
+/* Container */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Title */
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 2px 2px 8px #000;
+}
+
+/* 3D Input and Button Styles */
+.input3d, .button3d {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: #ecf0f1;
+    color: #2c3e50;
+    outline: none;
+    transition: transform 0.2s;
+}
+
+.input3d:focus, .button3d:hover {
+    transform: translateZ(10px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D Task List */
+.task-list3d {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.task-item:hover {
+    transform: perspective(500px) rotateX(-5deg) rotateY(5deg);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Priority Colors */
+.priority-low { border-left: 5px solid #28a745; }
+.priority-medium { border-left: 5px solid #ffc107; }
+.priority-high { border-left: 5px solid #dc3545; }
+
+/* Progress Bar */
+.progress-bar {
+    background: #e9ecef;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#progress {
+    background: #28a745;
+    height: 15px;
+    width: 0;
+    transition: width 0.5s;
+}
+
+/* Completed Tasks */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Additional Elements */
+.action-buttons {
+    margin-top: 20px;
+}
+
+button.complete-button, button.delete-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button.complete-button:hover, button.delete-button:hover {
+    transform: translateZ(5px);
+}
+
+/* Canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
